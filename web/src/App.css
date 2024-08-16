@@ -1,0 +1,67 @@
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.character-selector-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.multichar {
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(27, 27, 27, 0.8);
+  color: white;
+  padding: 20px;
+  width: 375px;
+  border-radius: 10px;
+}
+
+.character-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.character-card-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.character-card-charinfo {
+  color: #d5d5d5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
