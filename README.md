@@ -10,3 +10,6 @@ A multicharacter system built for [qbx_core](https://github.com/Qbox-project/qbx
 - [oxmysql](https://github.com/overextended/oxmysql)
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [ox_inventory](https://github.com/overextended/ox_inventory)
+
+# Feature Request & Issue Reporting
+Please open an issue here on github.
