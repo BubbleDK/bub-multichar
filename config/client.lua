@@ -1,5 +1,6 @@
 return {
   loadingModelsTimeout = 10000, -- Waiting time for ox_lib to load the models before throws an error, for low specs pc
+  defaultAllowedCharacters = 4, -- The amount of characters you can have in total
 
   characters = {
     locations = { -- Spawn locations for multichar, these are chosen randomly

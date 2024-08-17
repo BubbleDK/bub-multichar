@@ -261,6 +261,7 @@ local function chooseCharacter()
 		action = 'showMultiChar',
 		data = {
 			characters = characters,
+            allowedCharacters = amount
 		}
 	})
 

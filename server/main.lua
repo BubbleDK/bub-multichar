@@ -1,3 +1,5 @@
+local config = require 'config.server'
+
 local starterItems = { -- Character starting items
   { name = 'phone', amount = 1 },
   { 
@@ -70,10 +72,14 @@ local function giveStarterItems(source)
 	end
 end
 
+local function getAllowedAmountOfCharacters(license2, license)
+    return config.playersNumberOfCharacters[license2] or license and config.playersNumberOfCharacters[license] or config.defaultNumberOfCharacters
+end
+
 lib.callback.register('bub-multichar:server:getCharacters', function(source)
   local license2, license = GetPlayerIdentifierByType(source, 'license2'), GetPlayerIdentifierByType(source, 'license')
   local chars = fetchAllPlayerEntities(license2, license)
-  local allowedAmount = 4
+  local allowedAmount = getAllowedAmountOfCharacters(license2, license)
   local sortedChars = {}
   for i = 1, #chars do
     local char = chars[i]
