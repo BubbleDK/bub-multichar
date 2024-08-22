@@ -80,11 +80,18 @@ lib.callback.register('bub-multichar:server:getCharacters', function(source)
   local license2, license = GetPlayerIdentifierByType(source, 'license2'), GetPlayerIdentifierByType(source, 'license')
   local chars = fetchAllPlayerEntities(license2, license)
   local allowedAmount = getAllowedAmountOfCharacters(license2, license)
+  
   local sortedChars = {}
+  
+  for i = 1, allowedAmount do
+    sortedChars[i] = nil
+  end
+
   for i = 1, #chars do
     local char = chars[i]
-    sortedChars[char.cid] = char
+    sortedChars[i] = char
   end
+
   return sortedChars, allowedAmount
 end)
 
