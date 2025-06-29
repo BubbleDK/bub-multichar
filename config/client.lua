@@ -2,6 +2,9 @@ return {
   loadingModelsTimeout = 10000, -- Waiting time for ox_lib to load the models before throws an error, for low specs pc
   defaultAllowedCharacters = 4, -- The amount of characters you can have in total
 
+  qbx_properties = true, -- used to ensure that you get a starting apartment from qbx_properties
+  spawnlastlocation = false, -- change to true if you ALWAYS want to spawn at last location
+
   characters = {
     locations = { -- Spawn locations for multichar, these are chosen randomly
       {

@@ -228,8 +228,17 @@ local function createCharacter(cid, character)
     birthdate = character.birthdate,
     cid = cid
   })
+  
+    if GetResourceState('qbx_spawn') == 'missing' then
+        spawnDefault()
+    else
+        if config.qbx_properties then
+            TriggerEvent('apartments:client:setupSpawnUI', newData)
+        else
+            TriggerEvent('qbx_core:client:spawnNoApartments')
+        end
+    end
 
-  spawnDefault()
   destroyPreviewCam()
   return true
 end
@@ -277,7 +286,12 @@ RegisterNuiCallback('playCharacter', function(data, cb)
   SetNuiFocus(false, false)
   DoScreenFadeOut(10)
   lib.callback.await('bub-multichar:server:loadCharacter', false, data.citizenid)
-  spawnLastLocation()
+  if config.spawnlastlocation then
+    spawnLastLocation()
+  else
+    TriggerEvent('qb-spawn:client:setupSpawns', data.citizenid)
+    TriggerEvent('qb-spawn:client:openUI', true)
+  end
   destroyPreviewCam()
   cb(1)
 end)
